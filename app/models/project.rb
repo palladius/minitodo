@@ -4,4 +4,9 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :title,  :scope => :user_id # only one 'PERSONAL' for user 'XXX'
   
   belongs_to :user
+  
+  def name
+    title
+  end
+  
 end

@@ -3,23 +3,21 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Notes</th>
     <th>User</th>
     <th>Tags</th>
     <th>Priority</th>
     <th>Due</th>
-    <th>Group</th>
+    <th>Project</th>
     <th>Completed</th>
   </tr>
   <% for todo in @todos %>
     <tr>
-      <td><%= todo.title %></td>
-      <td><%= todo.notes %></td>
-      <td><%= todo.user_id %></td>
+      <td><b><%= link_to todo.title, todo %></b></td>
+      <td><%= todo.user.username %></td>
       <td><%= todo.tags %></td>
-      <td><%= todo.priority %></td>
+      <td><%= priority_column todo %></td>
       <td><%= todo.due %></td>
-      <td><%= todo.project_id %></td>
+      <td><%= title_column(todo.project) %></td>
       <td><%= todo.completed %></td>
       <td><%= link_to "Show", todo %></td>
       <td><%= link_to "Edit", edit_todo_path(todo) %></td>
