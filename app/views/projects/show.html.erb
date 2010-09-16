@@ -1,0 +1,40 @@
+<% title "Project" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%= @project.notes %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @project.user_id %>
+</p>
+<p>
+  <strong>Tags:</strong>
+  <%= @project.tags %>
+</p>
+<p>
+  <strong>Color:</strong>
+  <%= @project.color %>
+</p>
+<p>
+  <strong>Icon Url:</strong>
+  <%= @project.icon_url %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @project.active %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @project.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_project_path(@project) %> |
+  <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", projects_path %>
+</p>

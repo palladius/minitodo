@@ -1,0 +1,19 @@
+one:
+  title: MyString
+  notes: MyText
+  user_id: 1
+  tags: MyString
+  color: MyString
+  icon_url: MyString
+  active: false
+  user_id: 1
+
+two:
+  title: MyString
+  notes: MyText
+  user_id: 1
+  tags: MyString
+  color: MyString
+  icon_url: MyString
+  active: false
+  user_id: 1

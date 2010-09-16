@@ -1,4 +1,6 @@
 Minitodo::Application.routes.draw do
+  resources :projects
+
   resources :todos
 
   match 'signup' => 'users#new', :as => :signup
