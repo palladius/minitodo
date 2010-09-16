@@ -1,0 +1,40 @@
+<% title "Todo" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @todo.title %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%= @todo.notes %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @todo.user_id %>
+</p>
+<p>
+  <strong>Tags:</strong>
+  <%= @todo.tags %>
+</p>
+<p>
+  <strong>Priority:</strong>
+  <%= @todo.priority %>
+</p>
+<p>
+  <strong>Due:</strong>
+  <%= @todo.due %>
+</p>
+<p>
+  <strong>Group:</strong>
+  <%= @todo.group_id %>
+</p>
+<p>
+  <strong>Completed:</strong>
+  <%= @todo.completed %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_todo_path(@todo) %> |
+  <%= link_to "Destroy", @todo, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", todos_path %>
+</p>

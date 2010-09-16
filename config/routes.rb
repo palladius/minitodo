@@ -1,4 +1,6 @@
 Minitodo::Application.routes.draw do
+  resources :todos
+
   match 'signup' => 'users#new', :as => :signup
 
   match 'logout' => 'sessions#destroy', :as => :logout
