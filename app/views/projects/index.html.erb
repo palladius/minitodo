@@ -3,24 +3,19 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Notes</th>
     <th>User</th>
     <th>Tags</th>
-    <th>Color</th>
     <th>Icon Url</th>
     <th>Active</th>
     <th>User</th>
   </tr>
   <% for project in @projects %>
     <tr>
-      <td><%= project.title %></td>
-      <td><%= project.notes %></td>
-      <td><%= project.user_id %></td>
+      <td><font color='<%= project.color %>'><%= project.title %></td>
+      <td class='user'><%= project.user.username %></td>
       <td><%= project.tags %></td>
-      <td><%= project.color %></td>
       <td><%= project.icon_url %></td>
       <td><%= project.active %></td>
-      <td><%= project.user_id %></td>
       <td><%= link_to "Show", project %></td>
       <td><%= link_to "Edit", edit_project_path(project) %></td>
       <td><%= link_to "Destroy", project, :confirm => 'Are you sure?', :method => :delete %></td>

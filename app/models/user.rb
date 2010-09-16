@@ -40,12 +40,28 @@ class User < ActiveRecord::Base
   def create_skeleton()
     ver = '0.9'
     description = "Creating this via User.create_skeleton() v.#{ver}"
-    Project.create( :user_id => self.id, :title => 'Personal', :tags => 'personal, food' , :color => 'blue',  :active => true , :icon => '/icons/projects/personal')
-    Project.create( :user_id => self.id, :title => 'Work',     :tags => 'work, it' ,       :color => 'green', :active => true, :icon => '/icons/projects/personal')
-    Project.create( :user_id => self.id, :title => 'Family',   :tags => 'personal, home' , :color => 'pink',  :active => true, :icon => '/icons/projects/personal')
+    p1 = Project.create( :user_id => self.id, :title => 'Personal', :tags => 'personal, food' , :color => 'blue',  :active => true , :icon => '/icons/projects/personal')
+    p2 = Project.create( :user_id => self.id, :title => 'Work',     :tags => 'work, it' ,       :color => 'green', :active => true, :icon => '/icons/projects/personal')
+    p3 = Project.create( :user_id => self.id, :title => 'Family',   :tags => 'personal, home' , :color => 'pink',  :active => true, :icon => '/icons/projects/personal')
+    Todo.create( :user_id => self.id, :title => 'Write an email to Riccardo saying how cool this app is!', 
+      :notes => 'His email is rusko@palladius.it btw!',
+      :project_id => p1.id,
+      :priority => 4
+    )
+    Todo.create( :user_id => self.id, 
+      :title => 'Tell mum to throw pasta', 
+      :notes => 'His email is rusko@palladius.it btw!',
+      :project_id => p3.id
+#      :priority => 3
+    )
   end
   
   def after_create()
     create_skeleton rescue "Some error creating skeleton stuff: '#{$!}'"
   end
+  
+  def to_s
+    self.username rescue "ERR(#{$!})"
+  end
+  
 end

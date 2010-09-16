@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20100916173422) do
     t.string   "tags"
     t.string   "color"
     t.string   "icon_url"
-    t.boolean  "active"
+    t.boolean  "active",     :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
