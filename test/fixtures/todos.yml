@@ -5,7 +5,7 @@ one:
   tags: MyString
   priority: 1
   due: 2010-09-16
-  group_id: 1
+  project_id: 1
   completed: false
 
 two:
@@ -15,5 +15,5 @@ two:
   tags: MyString
   priority: 1
   due: 2010-09-16
-  group_id: 1
+  project_id: 1
   completed: false

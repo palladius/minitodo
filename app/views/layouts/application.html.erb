@@ -9,22 +9,17 @@
   </head>
   <body>
 	<div id='header'>
-		<h1>Welcome</h1>
-
 		<% if logged_in? %>
-		  <p><strong>You are logged in as <%=h current_user.login %></strong></p>
-		  <p><%= link_to 'Logout', logout_path %></p>
+		  Welcome <b class='user'><%= current_user.username %></b>! Not you?
+		  <%= link_to "Log out", logout_path %>
 		<% else %>
-		  <p><strong>You are currently not logged in.</strong></p>
-		  <p>
-		    <%= link_to 'Login', login_path %> or
-		    <%= link_to 'Sign Up', signup_path %>
-		  </p>
+		  <%= link_to "Sign up", signup_path %> or
+		  <%= link_to "log in", login_path %>.
 		<% end %>
 		Links to our models:
 		[
-		 <% link_to :todos,:todos %> |
-		 <% link_to :projects,:projects %> |
+		 <%= link_to 'todos','todos' %> |
+		 <%= link_to :projects,:projects %> |
 		]
 	</div>
 	

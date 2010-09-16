@@ -12,6 +12,7 @@ class TodosController < ApplicationController
   end
   
   def create
+    params[:user_id] ||= 1 # current_user
     @todo = Todo.new(params[:todo])
     if @todo.save
       flash[:notice] = "Successfully created todo."
