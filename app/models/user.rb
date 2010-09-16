@@ -35,4 +35,17 @@ class User < ActiveRecord::Base
   def encrypt_password(pass)
     Digest::SHA1.hexdigest([pass, password_salt].join)
   end
+  
+    # Creates work, personal, family projects
+  def create_skeleton()
+    ver = '0.9'
+    description = "Creating this via User.create_skeleton() v.#{ver}"
+    Project.create( :user_id => self.id, :title => 'Personal', :tags => 'personal, food' , :color => 'blue',  :active => true , :icon => '/icons/projects/personal')
+    Project.create( :user_id => self.id, :title => 'Work',     :tags => 'work, it' ,       :color => 'green', :active => true, :icon => '/icons/projects/personal')
+    Project.create( :user_id => self.id, :title => 'Family',   :tags => 'personal, home' , :color => 'pink',  :active => true, :icon => '/icons/projects/personal')
+  end
+  
+  def after_create()
+    create_skeleton rescue "Some error creating skeleton stuff: '#{$!}'"
+  end
 end

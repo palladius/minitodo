@@ -7,7 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :tags
       t.string :color
       t.string :icon_url
-      t.boolean :active
+      t.boolean :active,    :default => true
       t.integer :user_id
       t.timestamps
     end

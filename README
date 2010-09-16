@@ -7,6 +7,11 @@ Ideally, Id create:
 - projects (like 'cost centers': work, personal, family, ...)
 - tags   (@work, @travel, @urgent, @imp)
 
+= INSTALL
+
+ rake db:seed   # creates root and guest users, along with a few projects :)
+ rails server
+ # open http://localhost:3000/
 
 == Credits
 

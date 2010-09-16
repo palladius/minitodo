@@ -10,7 +10,7 @@
   <body>
 	<div id='header'>
 		<% if logged_in? %>
-		  Welcome <b class='user'><%= current_user.username %></b>! Not you?
+		  Welcome <b class='user'><%= current_user.username %></b> (<%=current_user.id%>)! Not you?
 		  <%= link_to "Log out", logout_path %>
 		<% else %>
 		  <%= link_to "Sign up", signup_path %> or
@@ -30,5 +30,15 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
+
+	<hr/>
+	<div id='footer'>
+	 <p>Users so far: 
+		<% User.all.map{|u| %>
+			<i class='user'><%= u.username %></i>
+		<% } %>
+		
+	</p>	
+	</div>
   </body>
 </html>
