@@ -1,4 +1,12 @@
 Minitodo::Application.routes.draw do
+  get "home/index"
+
+  get "home/docs"
+
+  get "home/about"
+
+  get "home/contact_us"
+
   resources :projects
 
   resources :todos
