@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    #@current_user = current_user rescue nil
   end
 
   def docs

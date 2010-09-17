@@ -1,6 +1,10 @@
 class TodosController < ApplicationController
+  
+  before_filter :login_required #, :except => [:index, :show]
+  
   def index
     @todos = Todo.all
+    #@todos = Todo.find_all_by_user_id 1 # current_user.id
   end
   
   def show
@@ -12,7 +16,7 @@ class TodosController < ApplicationController
   end
   
   def create
-    params[:user_id] ||= 1 # current_user
+    #params[:user_id] ||= 1 # current_user
     @todo = Todo.new(params[:todo])
     if @todo.save
       flash[:notice] = "Successfully created todo."

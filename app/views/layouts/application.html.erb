@@ -9,18 +9,16 @@
   </head>
   <body>
 	<div id='header'>
-		<% if logged_in? %>
-		  Welcome <b class='user'><%= current_user.username %></b> (<%=current_user.id%>)! Not you?
-		  <%= link_to "Log out", logout_path %>
-		<% else %>
-		  <%= link_to "Sign up", signup_path %> or
-		  <%= link_to "log in", login_path %>.
-		<% end %>
-		Links to our models:
+		<div align='right' class='login_stuff' >
+			<%= render :partial => "layouts/login_stuff" %>
+		</div>
+		<div align='center' class='model_menu' >
 		[
-		 <%= link_to 'todos','todos' %> |
-		 <%= link_to :projects,:projects %> |
+		 <%= link_to 'Home','/' %> |
+		 <%= link_to 'Todos','/todos' %> |
+		 <%= link_to 'Projects',"/projects" %> 
 		]
+		</div>
 	</div>
 	
     <div id="container">
@@ -33,12 +31,12 @@
 
 	<hr/>
 	<div id='footer'>
-	 <p>Users so far: 
-		<% User.all.map{|u| %>
-			<i class='user'><%= u.username %></i>
-		<% } %>
-		
-	</p>	
+	[
+	 <%= link_to 'Home','/' %> |
+	 <%= link_to 'Contact Us','/home/contact_us' %> |
+	 <%= link_to 'Docs','/home/docs' %> |
+	 <%= link_to 'About','/home/about' %>
+	]
 	</div>
   </body>
 </html>

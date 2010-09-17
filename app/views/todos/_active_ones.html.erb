@@ -1,4 +1,8 @@
-<% title "Todos" %>
+<% title "Active Todos" %>
+
+<h2 >Active todos for ???</h2>
+
+These are your active todos.
 
 <table>
   <tr>
@@ -12,12 +16,12 @@
   </tr>
   <% for todo in @todos %>
     <tr>
-      <td><b><%= link_to( todo.title, todo )%></b></td>
-      <td><%= raw user_column(todo.user,false) %></td>
+      <td><b><%= link_to todo.title, todo %></b></td>
+      <td><%= user_column(todo.user) %></td>
       <td><%= todo.tags %></td>
       <td><%= priority_column todo %></td>
       <td><%= todo.due %></td>
-      <td><%= raw title_column(todo.project) %></td>
+      <td><%= title_column(todo.project) %></td>
       <td><%= todo.completed %></td>
       <td><%= link_to "Show", todo %></td>
       <td><%= link_to "Edit", edit_todo_path(todo) %></td>
