@@ -1,0 +1,14 @@
+<h1>Welcome, anonymous 2!</h1>
+
+This is a TODO list website. Please login!
+
+TODO put login/signin stuff here.
+
+
+ <h2>Users so far:</h2> 
+<p>
+	<% User.all.map{|u| %>
+		<i class='user'><%= u.username %></i>
+	<% } %>
+	
+</p>
