@@ -13,6 +13,11 @@ Ideally, Id create:
  rails server
  # open http://localhost:3000/
 
+= BUGS
+
+Oops last commits have broken some functionalities :(
+Cant create a todo anymore. TBInspected
+
 == Credits
 
 Riccardo Carlesso (author)
