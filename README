@@ -3,9 +3,9 @@
 Hi everybody. This is justa  work in progress.
 Ideally, Id create:
 
-- todos
-- projects (like 'cost centers': work, personal, family, ...)
-- tags   (@work, @travel, @urgent, @imp)
+	- todos
+	- projects (like 'cost centers': work, personal, family, ...)
+	- tags   (@work, @travel, @urgent, @imp)
 
 = INSTALL
 
