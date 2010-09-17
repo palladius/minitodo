@@ -3,3 +3,13 @@ Run "rake doc:app" to generate API documentation for your models, controllers, h
 
 Hi everybody.
 This is a minitodo with RyanBates login and scaffolds and a few ideas on my won :-)
+
+
+= GIT
+
+Since Im no git guru, some cut n paste for github.
+
+git push origin master
+
+git push
+git pull
