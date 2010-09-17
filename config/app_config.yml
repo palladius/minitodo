@@ -5,4 +5,10 @@ test:
   domain: test.host
 
 production:
-  domain: example.com
+  domain: minitodo.heroku.com
+
+
+all:
+  version: 0.9a
+  name: 'MiniTodo'
+  description: Yet another ToDo Application with lots of tags.
