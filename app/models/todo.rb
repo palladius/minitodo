@@ -5,9 +5,15 @@ class Todo < ActiveRecord::Base
   validates_exclusion_of :attribute, :in => %w( mov avi ), :on => :create, :message => "extension %s is not allowed"
   validates_associated :user #, :on => :create
   validates_associated :project #, :on => :create
-  validates_inclusion_of :priority, :in => [1,2,3,4,5], :on => :create, :message => "number %s must be in 1..5!"
+  validates_inclusion_of :priority, :in => 1..5 , :message => "number must be in 1..5!"
   belongs_to :user
   belongs_to :project  
+  
+  #Todo.with_scope(:find => {:conditions => "user_id = #{current_user.id}"},
+  #                :create => {:user_id => current_user.id}) do
+  # user_posts = Post.find(:all)
+  
+  
   
   def before_save
     notes ||= '_NO_NOTES_'
